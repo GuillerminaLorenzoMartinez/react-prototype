@@ -39,6 +39,25 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Component Testing
+
+1- Run `npm start`.
+2- In a different terminal run `npx cypress open`.
+3- Select **Component Testing**.
+4- Choose a browser.
+5- Press **Start Component Testing in ${selected browser}**.
+6- Select test you want to run.
+
+## E2E Testing
+
+Skip steps 1 and 2 if you have done in before for **Component Testing**, and start from step 3
+1- Run `npm start`.
+2- In a different terminal run `npx cypress open`.
+3- Select **E2E Testing**.
+4- Choose a browser.
+5- Press **Start E2E Testing in ${selected browser}**.
+6- Select test you want to run.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
