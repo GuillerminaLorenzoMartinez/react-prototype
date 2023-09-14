@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1>Counter App</h1>
-      <CounterProvider>
+      <CounterProvider initialValue={0}>
         <CounterDisplay />
         <CounterButtons />
       </CounterProvider>

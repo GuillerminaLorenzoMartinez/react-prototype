@@ -16,8 +16,14 @@ export function useCounter() {
   return context;
 }
 
-export function CounterProvider({ children }: { children: ReactNode }) {
-  const [count, setCount] = useState(0);
+export function CounterProvider({
+  children,
+  initialValue,
+}: {
+  children: ReactNode;
+  initialValue: number;
+}) {
+  const [count, setCount] = useState(initialValue);
 
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);

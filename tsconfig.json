@@ -16,5 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "__tests__/CounterDisplay.test.tsx"]
+  "extends": "@tsconfig/cypress/tsconfig.json",
+  "include": [
+    "src",
+    "cypress/components/counterButtons.cy.tsx",
+    "cypress/components/counterDisplay.cy.tsx"
+  ]
 }
