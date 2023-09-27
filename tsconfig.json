@@ -12,7 +12,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
@@ -20,6 +19,6 @@
   "include": [
     "src",
     "cypress/components/counterButtons.cy.tsx",
-    "cypress/components/counterDisplay.cy.tsx"
+    "cypress/components/display.cy.tsx"
   ]
 }
