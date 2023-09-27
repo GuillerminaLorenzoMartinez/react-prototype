@@ -4,6 +4,10 @@ type CounterContextType = {
   count: number;
   increment: () => void;
   decrement: () => void;
+  user: { name: string; age: number };
+  settings: { theme: string; fontSize: number };
+  updateUser: (name: string, age: number) => void;
+  updateSettings: (theme: string, fontSize: number) => void;
 };
 
 const CounterContext = createContext<CounterContextType | null>(null);
@@ -16,20 +20,45 @@ export function useCounter() {
   return context;
 }
 
+interface MyContextProviderProps {
+  children: ReactNode;
+  initialValue: number;
+  user: { name: string; age: number };
+  settings: { theme: string; fontSize: number };
+}
+
 export function CounterProvider({
   children,
   initialValue,
-}: {
-  children: ReactNode;
-  initialValue: number;
-}) {
+  user: initialUser,
+  settings: initialSettings,
+}: MyContextProviderProps) {
   const [count, setCount] = useState(initialValue);
+  const [user, setUser] = useState(initialUser);
+  const [settings, setSettings] = useState(initialSettings);
 
   const increment = () => setCount(count + 1);
   const decrement = () => setCount(count - 1);
 
+  const updateUser = (name: string, age: number) => {
+    setUser({ name, age });
+  };
+  const updateSettings = (theme: string, fontSize: number) => {
+    setSettings({ theme, fontSize });
+  };
+
   return (
-    <CounterContext.Provider value={{ count, increment, decrement }}>
+    <CounterContext.Provider
+      value={{
+        count,
+        increment,
+        decrement,
+        user,
+        updateUser,
+        settings,
+        updateSettings,
+      }}
+    >
       {children}
     </CounterContext.Provider>
   );
